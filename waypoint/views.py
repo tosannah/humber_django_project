@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from trails.models import Trail
 
 
 def home(request):
@@ -66,4 +67,8 @@ def catalog(request):
         },
     ]
 
+    return render(request, "catalog.html", {"trails": trails})
+
+def trail_catalog(request):
+    trails = Trail.objects.filter(is_open=True).order_by("distance_km")
     return render(request, "catalog.html", {"trails": trails})
