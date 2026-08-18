@@ -1,7 +1,8 @@
+from abc import ABC, abstractmethod
 from waypoint_core.distance import Distance
 
 
-class Trail:
+class Trail(ABC):
     DEFAULT_UNIT = "km"
     ALLOWED_DIFFICULTIES = ("easy", "moderate", "hard", "expert")
 
@@ -44,6 +45,7 @@ class Trail:
             raise ValueError("Unit must be 'km' or 'mi'")
 
         cls.DEFAULT_UNIT = unit
+
     @staticmethod
     def is_valid_difficulty(difficulty):
         return difficulty in Trail.ALLOWED_DIFFICULTIES
@@ -53,3 +55,11 @@ class Trail:
             return False
 
         return self.id == other.id
+
+    @abstractmethod
+    def estimated_time(self):
+        pass
+
+    @abstractmethod
+    def summary(self):
+        pass
