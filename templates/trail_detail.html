@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ trail.name }}</h1>
+
+<p><strong>Park:</strong> {{ trail.park }}</p>
+<p><strong>Distance:</strong> {{ trail.distance_km|floatformat:1 }} km</p>
+<p><strong>Elevation:</strong> {{ trail.elevation_gain }}</p>
+<p><strong>Difficulty:</strong> {{ trail.get_difficulty_display }}</p>
+<p><strong>Status:</strong> {% if trail.is_open %}Open{% else %}Closed{% endif %}</p>
+{% endblock %}
