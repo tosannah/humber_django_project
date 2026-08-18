@@ -10,7 +10,8 @@
             <tr>
                 <th>#</th>
                 <th>Name</th>
-                <th>Distance (km)</th>
+		<th>Park</th>
+		<th>Distance (km)</th>
                 <th>Elevation (m)</th>
                 <th>Difficulty</th>
                 <th>Status</th>
@@ -22,6 +23,7 @@
                 <tr>
                     <td>{{ forloop.counter }}</td>
                     <td>{{ trail.name }}</td>
+		    <td>{{ trail.park }}</td>
                     <td>{{ trail.distance_km|floatformat:1 }}</td>
 <td>{{ trail.elevation_gain }}</td>
 
