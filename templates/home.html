@@ -1,13 +1,8 @@
-{% load static %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Waypoint</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
+{% block title %}Home - Waypoint{% endblock %}
+
+{% block content %}
     <h1>{{ greeting }}</h1>
     <p>Discover your next trail adventure.</p>
-</body>
-</html>
+{% endblock %}
